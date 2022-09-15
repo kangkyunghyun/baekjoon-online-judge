@@ -23,7 +23,7 @@ int main() {
   }
   for (int j = 0; j < n; j++) {
     if (a[j] < x) {
-      cout << a[j] << '\n';
+      cout << a[j] << ' ';
     }
   }
 }
