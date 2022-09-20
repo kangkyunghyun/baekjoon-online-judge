@@ -29,10 +29,7 @@ int main() {
         cnt++;
       }
     }
-    arr[i] = cnt;
-  }
-  for (int i = 0; i < 10; i++) {
-    cout << arr[i] << '\n';
+    cout << cnt << '\n';
   }
   return 0;
 }
