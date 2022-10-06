@@ -2,10 +2,15 @@
 *
 
 # Unignore all with extensions
-!*.*
+# !*.*
+
+# Unignore cpp and py
+!*.cpp
+!*.py
 
 # Unignore all dirs
 !*/
 
 .DS_Store
 .vscode
+
