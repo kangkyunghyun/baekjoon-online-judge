@@ -12,11 +12,15 @@
 #include <iostream>
 using namespace std;
 
+int factorial(int n, int ans = 1) {
+  if (n > 1)
+    return factorial(n - 1, ans * n);
+  return ans;
+}
+
 int main() {
-  int n, r = 1;
+  int n;
   cin >> n;
-  for (int i = 1; i <= n; i++) {
-    r *= i;
-  }
-  cout << r << '\n';
+  cout << factorial(n) << '\n';
+  return 0;
 }
