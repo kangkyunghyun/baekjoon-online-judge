@@ -24,7 +24,7 @@ int main() {
       cin >> v[i][j];
   cin >> k;
   while (k--) {
-    int i, j, x, y, sum = 0, brk = 0;
+    int i, j, x, y, sum = 0;
     cin >> i >> j >> x >> y;
     for (int a = i - 1; a <= x - 1; a++)
       for (int b = j - 1; b <= y - 1; b++)
