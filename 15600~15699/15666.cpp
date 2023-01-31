@@ -19,17 +19,20 @@
 using namespace std;
 
 int n, m;
-vector<int> tmp(8, 0), v, arr(10001, 0);
-vector<vector<int>> ans;
+vector<int> ans(8, 0), v, visited(8, 0);
 
 void dfs(int cnt) {
   if (cnt == m) {
-    ans.push_back(tmp);
+    for (int i = 0; i < m; i++)
+      cout << ans[i] << ' ';
+    cout << '\n';
     return;
   }
+  int tmp = 0;
   for (int i = 0; i < n; i++)
-    if (v[i] >= tmp[cnt - 1]) {
-      tmp[cnt] = v[i];
+    if (v[i] != tmp && v[i] >= ans[cnt - 1]) {
+      ans[cnt] = v[i];
+      tmp = ans[cnt];
       dfs(cnt + 1);
     }
 }
@@ -42,16 +45,8 @@ int main() {
     int x;
     cin >> x;
     v.push_back(x);
-    arr[x]++;
   }
   sort(v.begin(), v.end());
   dfs(0);
-  sort(ans.begin(), ans.end());
-  ans.erase(unique(ans.begin(), ans.end()), ans.end());
-  for (auto i : ans) {
-    for (int j = 0; j < m; j++)
-      cout << i[j] << ' ';
-    cout << '\n';
-  }
   return 0;
 }
