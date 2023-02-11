@@ -17,23 +17,25 @@
 using namespace std;
 
 int main() {
+  ios::sync_with_stdio(false);
+  cin.tie(NULL);
   int n, k;
   cin >> n >> k;
-  vector<int> arr, ans;
-  for (int i = 0; i < n; i++)
-    arr.push_back(i + 1);
-  for (int i = k - 1; arr.size() != 0; i += k - 1) {
-    while (i >= arr.size())
-      i -= arr.size();
-    ans.push_back(arr[i]);
-    arr.erase(arr.begin() + i);
+  queue<int> q;
+  for (int i = 1; i <= n; i++)
+    q.push(i);
+  cout << '<';
+  int cnt = 0;
+  while (q.size() > 1) {
+    cnt++;
+    if (cnt % k) {
+      q.push(q.front());
+      q.pop();
+    } else {
+      cout << q.front() << ", ";
+      q.pop();
+    }
   }
-  cout << "<";
-  for (int i = 0; i < n; i++) {
-    cout << ans[i];
-    if (i != n - 1)
-      cout << ", ";
-  }
-  cout << ">\n";
+  cout << q.front() << ">\n";
   return 0;
 }
