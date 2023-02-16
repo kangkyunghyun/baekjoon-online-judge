@@ -24,24 +24,20 @@ int main() {
   while (1) {
     int n;
     cin >> n;
-    int origin = n;
     if (!n)
       break;
-    vector<int> prime{2, 3, 5, 7, 11, 13, 17, 19, 23}, v;
-    int now = 1;
-    for (int i = 0; i < prime.size(); i++) {
-      now *= prime[i];
-      v.push_back(now);
-    }
+    int origin = n;
+    vector<int> prime{2, 3, 5, 7, 11, 13, 17, 19, 23}, v(9, 0);
+    for (int i = 1; i < 9; i++)
+      v[i] = v[i - 1] + prime[i];
     vector<string> ans;
     for (int i = v.size() - 1; i >= 0; i--) {
       if (v[i] <= n) {
         int cnt = n / v[i];
         n %= v[i];
         string tmp = to_string(cnt);
-        for (int j = 0; j <= i; j++) {
+        for (int j = 0; j <= i; j++)
           tmp += "*" + to_string(prime[j]);
-        }
         ans.push_back(tmp);
       }
     }
