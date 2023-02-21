@@ -27,10 +27,6 @@ int main() {
       n++;
     }
   }
-  int ans = 0;
-  for (int i = 0; i <= max - min; i++)
-    if (sieve[i])
-      ans++;
-  cout << ans << '\n';
+  cout << accumulate(sieve.begin(), sieve.begin() + max - min + 1, 0) << '\n';
   return 0;
 }
