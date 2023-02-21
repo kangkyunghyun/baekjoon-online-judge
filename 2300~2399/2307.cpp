@@ -23,13 +23,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define INF 50000000001
+#define INF 1000000000
 
 int N, M;
-vector<pair<int, long long>> graph[1001];
-vector<long long> dist(1001, INF);
-vector<int> visited(1001, 0), bef(1001, -1);
-priority_queue<pair<long long, int>, vector<pair<long long, int>>, greater<>> pq;
+vector<pair<int, int>> graph[1001];
+vector<int> dist(1001, INF), visited(1001, 0), bef(1001, -1);
+priority_queue<pair<int, int>, vector<pair<int, int>>, greater<>> pq;
 
 void init() {
   for (int i = 1; i <= N; i++) {
@@ -38,7 +37,7 @@ void init() {
   }
 }
 
-long long dijkstra(int s, int e) {
+int dijkstra(int s, int e) {
   init();
   dist[s] = 0;
   pq.push({0, s});
@@ -52,8 +51,7 @@ long long dijkstra(int s, int e) {
       break;
     visited[curr] = 1;
     for (auto &p : graph[curr]) {
-      int next = p.first;
-      long long d = p.second;
+      int next = p.first, d = p.second;
       if (dist[next] > dist[curr] + d) {
         dist[next] = dist[curr] + d;
         bef[next] = curr;
@@ -74,8 +72,7 @@ int main() {
     graph[a].push_back({b, t});
     graph[b].push_back({a, t});
   }
-  long long m = dijkstra(1, N), ans = -1;
-  int tmp = N;
+  int m = dijkstra(1, N), ans = -1, tmp = N;
   vector<int> way;
   while (tmp > 0) {
     way.push_back(tmp);
@@ -98,12 +95,12 @@ int main() {
         graph[b][j].second = INF;
         break;
       }
-    long long time = dijkstra(1, N);
+    int time = dijkstra(1, N);
     if (time == INF) {
       ans = -1;
       break;
     }
-    long long gap = time - m;
+    int gap = time - m;
     ans = max(ans, gap);
     graph[a][a_idx].second = a_cost;
     graph[b][b_idx].second = b_cost;
