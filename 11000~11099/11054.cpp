@@ -33,8 +33,8 @@ int main() {
           if (v[a] < v[b])
             dsc[a] = max(dsc[a], dsc[b] + 1);
       ans = max(ans, m + *max_element(dsc.begin(), dsc.end()) - 1);
+      fill(dsc.begin(), dsc.end(), 1);
     }
-    fill(dsc.begin(), dsc.end(), 1);
   }
   cout << ans << '\n';
   return 0;
