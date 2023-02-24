@@ -20,12 +20,12 @@ int main() {
   string s;
   cin >> n >> k >> s;
   vector<int> v;
-  for (int i = 0; i < n; i++) {
-    while (!v.empty() && v.back() < s[i] - '0' && k) {
+  for (char i : s) {
+    while (!v.empty() && v.back() < i - '0' && k) {
       v.pop_back();
       k--;
     }
-    v.push_back(s[i] - '0');
+    v.push_back(i - '0');
   }
   while (k--)
     v.pop_back();
