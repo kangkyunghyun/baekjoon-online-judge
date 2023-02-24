@@ -30,23 +30,19 @@ int main() {
   cin.tie(NULL);
   int N, M, dist[101][101], m = 1e9, ans = 1;
   cin >> N >> M;
-  // dist 배열 초기화
   for (int i = 1; i <= N; i++)
     for (int j = 1; j <= N; j++)
       dist[i][j] = i == j ? 0 : INF;
-  // 간선 입력
   while (M--) {
     int a, b;
     cin >> a >> b;
     dist[a][b] = 1;
     dist[b][a] = 1;
   }
-  // 플로이드 워셜
   for (int k = 1; k <= N; k++)
     for (int i = 1; i <= N; i++)
       for (int j = 1; j <= N; j++)
         dist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j]);
-  // 실제 최단 경로
   for (int i = 1; i <= N; i++) {
     int sum = 0;
     for (int j = 1; j <= N; j++)
