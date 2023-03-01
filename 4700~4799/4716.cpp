@@ -16,11 +16,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-struct balloon {
+struct team {
   int K, a, b;
 };
 
-bool cmp(balloon a, balloon b) {
+bool cmp(team a, team b) {
   return abs(a.a - a.b) > abs(b.a - b.b);
 }
 
@@ -33,7 +33,7 @@ int main() {
     cin >> N >> A >> B;
     if (!N && !A && !B)
       break;
-    vector<balloon> v(N);
+    vector<team> v(N);
     for (int i = 0; i < N; i++)
       cin >> v[i].K >> v[i].a >> v[i].b;
     sort(v.begin(), v.end(), cmp);
