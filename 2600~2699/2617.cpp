@@ -41,12 +41,12 @@ int main() {
   for (int i = 1; i <= N; i++) {
     int small = 0, big = 0;
     for (int j = 1; j <= N; j++) {
-      if (dist[i][j] == 0 || dist[j][i] == 0)
+      if (dist[i][j] == 0)
         continue;
-      if (dist[i][j] != INF && dist[i][j] != 0)
-        small++;
-      else if (dist[i][j] == INF && dist[j][i] != INF)
+      if (dist[i][j] != INF)
         big++;
+      else if (dist[j][i] != INF)
+        small++;
     }
     if (small > N / 2 || big > N / 2)
       ans++;
