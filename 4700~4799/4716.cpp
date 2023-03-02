@@ -20,10 +20,6 @@ struct team {
   int K, a, b;
 };
 
-bool cmp(team a, team b) {
-  return abs(a.a - a.b) > abs(b.a - b.b);
-}
-
 int main() {
   ios::sync_with_stdio(false);
   cin.tie(NULL);
@@ -36,7 +32,7 @@ int main() {
     vector<team> v(N);
     for (int i = 0; i < N; i++)
       cin >> v[i].K >> v[i].a >> v[i].b;
-    sort(v.begin(), v.end(), cmp);
+    sort(v.begin(), v.end(), [](team a, team b) { return abs(a.a - a.b) > abs(b.a - b.b); });
     for (int i = 0; i < N; i++) {
       int K = v[i].K, a = v[i].a, b = v[i].b;
       if (a < b) {
