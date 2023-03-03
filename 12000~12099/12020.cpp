@@ -32,9 +32,8 @@ int main() {
     double d = U[i][i];
     for (int j = i + 1; j < n; j++) {
       double x = U[j][i] / d;
-      for (int k = 0; k < n; k++) {
+      for (int k = 0; k < n; k++)
         U[j][k] -= x * U[i][k];
-      }
       L[j][i] = x;
     }
   }
