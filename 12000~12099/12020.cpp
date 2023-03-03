@@ -54,12 +54,12 @@ int main() {
   for (int i = 0; i < n; i++) {
     for (int j = 0; j < n; j++)
       cout << L[i][j] << ' ';
-    cout << 'n';
+    cout << '\n';
   }
   for (int i = 0; i < n; i++) {
     for (int j = 0; j < n; j++)
       cout << U[i][j] << ' ';
-    cout << 'n';
+    cout << '\n';
   }
   return 0;
 }
