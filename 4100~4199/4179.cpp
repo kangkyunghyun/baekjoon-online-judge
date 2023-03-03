@@ -70,22 +70,6 @@ void bfsF() {
   }
 }
 
-void check() {
-  for (int i = 0; i < R; i++) {
-    if ((visitedJ[i][0] && visitedJ[i][0] < visitedF[i][0]) || (visitedJ[i][0] && !visitedF[i][0]))
-      ans.push_back(visitedJ[i][0]);
-    if ((visitedJ[i][C - 1] && visitedJ[i][C - 1] < visitedF[i][C - 1]) || (visitedJ[i][C - 1] && !visitedF[i][C - 1]))
-      ans.push_back(visitedJ[i][C - 1]);
-  }
-  for (int i = 0; i < C; i++) {
-    if ((visitedJ[0][i] && visitedJ[0][i] < visitedF[0][i]) || (visitedJ[0][i] && !visitedF[0][i]))
-      ans.push_back(visitedJ[0][i]);
-    if ((visitedJ[R - 1][i] && visitedJ[R - 1][i] < visitedF[R - 1][i]) || (visitedJ[R - 1][i] && !visitedF[R - 1][i]))
-      ans.push_back(visitedJ[R - 1][i]);
-  }
-  sort(ans.begin(), ans.end());
-}
-
 int main() {
   ios::sync_with_stdio(false);
   cin.tie(NULL);
@@ -107,10 +91,21 @@ int main() {
   }
   bfsJ();
   bfsF();
-  check();
+  for (int i = 0; i < R; i++) {
+    if ((visitedJ[i][0] && visitedJ[i][0] < visitedF[i][0]) || (visitedJ[i][0] && !visitedF[i][0]))
+      ans.push_back(visitedJ[i][0]);
+    if ((visitedJ[i][C - 1] && visitedJ[i][C - 1] < visitedF[i][C - 1]) || (visitedJ[i][C - 1] && !visitedF[i][C - 1]))
+      ans.push_back(visitedJ[i][C - 1]);
+  }
+  for (int i = 0; i < C; i++) {
+    if ((visitedJ[0][i] && visitedJ[0][i] < visitedF[0][i]) || (visitedJ[0][i] && !visitedF[0][i]))
+      ans.push_back(visitedJ[0][i]);
+    if ((visitedJ[R - 1][i] && visitedJ[R - 1][i] < visitedF[R - 1][i]) || (visitedJ[R - 1][i] && !visitedF[R - 1][i]))
+      ans.push_back(visitedJ[R - 1][i]);
+  }
   if (ans.empty())
     cout << "IMPOSSIBLE\n";
   else
-    cout << ans[0] << '\n';
+    cout << *min_element(ans.begin(), ans.end()) << '\n';
   return 0;
 }
