@@ -37,11 +37,6 @@ int main() {
       L[j][i] = x;
     }
   }
-  for (int i = 0, j = 0; i < n; i++, j++)
-    if (L[i][j] != 1) {
-      cout << "-1\n";
-      return 0;
-    }
   for (int i = 0; i < n; i++)
     for (int j = 0; j < n; j++)
       if (isnan(L[i][j]) || isnan(U[i][j])) {
