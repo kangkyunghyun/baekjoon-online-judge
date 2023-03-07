@@ -71,8 +71,6 @@ int main() {
     while (m--) {
       int a, b, d;
       cin >> a >> b >> d;
-      if ((a == g && b == h) || (a == h && b == g))
-        len = d;
       graph[a].push_back({b, d});
       graph[b].push_back({a, d});
     }
