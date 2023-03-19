@@ -13,31 +13,31 @@
 
 #include <bits/stdc++.h>
 using namespace std;
-#define p pair<int, int>
+#define pii pair<int, int>
 
-int V, E, visited[10001] = {0}, ans = 0;
-vector<p> graph[10001];
+int V, E;
+vector<pii> graph[10001];
 
-void mst() {
-  priority_queue<p> pq;
-  for (int i = 0; i < graph[1].size(); i++)
-    pq.push(graph[1][i]);
+int prim() {
+  priority_queue<pii> pq;
+  vector<int> visited(V + 1, 0);
   visited[1] = 1;
-  int cnt = 0;
-  while (cnt < V - 1) {
-    int cost = -pq.top().first;
+  for (pii edge : graph[1])
+    pq.push(edge);
+  int cost = 0;
+  while (!pq.empty()) {
+    int weight = -pq.top().first;
     int node = pq.top().second;
     pq.pop();
     if (!visited[node]) {
-      visited[node] = ++cnt;
-      ans += cost;
-      for (int i = 0; i < graph[node].size(); i++) {
-        int next = graph[node][i].second;
-        if (!visited[next])
-          pq.push(graph[node][i]);
-      }
+      visited[node] = 1;
+      cost += weight;
+      for (pii next : graph[node])
+        if (!visited[next.second])
+          pq.push(next);
     }
   }
+  return cost;
 }
 
 int main() {
@@ -50,7 +50,6 @@ int main() {
     graph[a].push_back({-c, b});
     graph[b].push_back({-c, a});
   }
-  mst();
-  cout << ans;
+  cout << prim();
   return 0;
 }
