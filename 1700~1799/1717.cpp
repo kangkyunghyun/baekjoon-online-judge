@@ -40,9 +40,7 @@ void merge(int x, int y) {
 }
 
 void check(int x, int y) {
-  x = find(x);
-  y = find(y);
-  cout << (x == y ? "YESn" : "NOn");
+  cout << (find(x) == find(y) ? "YES\n" : "NO\n");
 }
 
 int main() {
