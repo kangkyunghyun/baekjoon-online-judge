@@ -24,8 +24,6 @@ int main() {
   while (a < n) {
     if (a == 0)
       a++;
-    else if (a * 2 >= n)
-      a = n;
     else
       a *= 2;
     ans++;
