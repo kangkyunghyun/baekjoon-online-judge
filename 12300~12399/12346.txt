@@ -1,0 +1,10 @@
+12346: Proprietary Problem
+
+- 문제
+Ghudegy 정품 인증
+이 계정에 처음으로 Ghudegy를 설치하는 경우(또는 다른 버전을 설치하는 경우) 유효한 Ghudegy 제품 키를 입력해야 합니다.
+제품키는 웹 사이트에서 구입한 Ghudegy의 디지털 복사본의 경우 구입 후 받은 확인 메일에 있으며, 대리점에서 구입한 Ghudegy의 경우에는 구매 시 수령한 카드에 Ghudegy 제품 키의 확인 방법이 동봉되어 있습니다.
+
+제품 키는 다음과 비슷합니다: XXXXX-XXXXX-XXXXX-XXXXX-XXXXX
+
+TMCBW-4QMC4-8XV72-PR9GK-CQKJW
