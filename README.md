@@ -8,4 +8,3 @@
 - 해설 및 풀이는 [블로그](https://khyunx.tistory.com)에 작성합니다.
 
 [![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=kangkh0906)](https://solved.ac/kangkh0906/)
-![kangkh0906 profile](http://mazandi.herokuapp.com/api?handle=kangkh0906&theme=warm)
