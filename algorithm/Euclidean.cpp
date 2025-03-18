@@ -8,20 +8,20 @@ using namespace std;
 // }
 
 int gcd(int a, int b) {
-  return b ? gcd(b, a % b) : a;
+    return b ? gcd(b, a % b) : a;
 }
 
 int lcm(int a, int b) {
-  return a * b / gcd(a, b);
+    return a * b / gcd(a, b);
 }
 
 int main() {
-  ios::sync_with_stdio(false);
-  cin.tie(NULL);
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
 
-  int n, m;
-  cin >> n >> m;
-  cout << gcd(n, m) << ' ' << lcm(n, m);
+    int n, m;
+    cin >> n >> m;
+    cout << gcd(n, m) << ' ' << lcm(n, m);
 
-  return 0;
+    return 0;
 }
