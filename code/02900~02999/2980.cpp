@@ -15,14 +15,22 @@ signed main() {
         v[i].second.second = g;
     }
     int t = 0;
-    for (int d = 0, i = 0; d < l; t++, d++) {
-        if (d == v[i].first) {
-            if (t % (v[i].second.first + v[i].second.second) <= v[i].second.first)
-                t += v[i].second.first - (t % (v[i].second.first + v[i].second.second));
-            else
-                t++, d++;
-            i++;
+    for (int d = 0, i = 0; d < l;) {
+        if (i < n) {
+            int pos = v[i].first;
+            int r = v[i].second.first;
+            int g = v[i].second.second;
+            int cycle = r + g;
+            if (d == pos) {
+                if (t % cycle <= r)
+                    t += r - (t % cycle);
+                else
+                    t++, d++;
+                i++;
+                continue;
+            }
         }
+        t++, d++;
     }
     cout << t;
 }
