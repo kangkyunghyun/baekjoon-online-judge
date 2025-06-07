@@ -1,5 +1,7 @@
+// Union Find
 #include <bits/stdc++.h>
 using namespace std;
+#define int long long
 
 vector<int> p;
 
@@ -18,9 +20,8 @@ void merge(int x, int y) {
         p[x] = y;
 }
 
-int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(NULL);
+signed main() {
+    cin.tie(0)->sync_with_stdio(0);
     int n;
     cin >> n;
     p.resize(n + 1);

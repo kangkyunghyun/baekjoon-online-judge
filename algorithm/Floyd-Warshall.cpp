@@ -1,10 +1,11 @@
+// Floyd Warshall O(N^3)
 #include <bits/stdc++.h>
 using namespace std;
+#define int long long
 #define INF 1e9
 
-int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(NULL);
+signed main() {
+    cin.tie(0)->sync_with_stdio(0);
     int N, M, dist[101][101];
     cin >> N >> M;
     // dist 배열 초기화
@@ -30,4 +31,3 @@ int main() {
     }
     return 0;
 }
-// O(N^3)

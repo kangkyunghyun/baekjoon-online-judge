@@ -1,5 +1,7 @@
+// MST O(ElogE)
 #include <bits/stdc++.h>
 using namespace std;
+#define int long long
 
 int V, E, ans = 0;
 vector<pair<int, pair<int, int>>> edge;
@@ -20,9 +22,8 @@ void merge(int x, int y) {
         p[x] = y;
 }
 
-int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(NULL);
+signed main() {
+    cin.tie(0)->sync_with_stdio(0);
     cin >> V >> E;
     p.resize(V + 1);
     iota(p.begin(), p.end(), 0);
@@ -40,4 +41,3 @@ int main() {
     cout << ans;
     return 0;
 }
-// O(ElogE)

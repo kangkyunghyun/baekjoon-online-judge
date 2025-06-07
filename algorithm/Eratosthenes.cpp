@@ -1,9 +1,10 @@
+// Eratosthenes O(nlog(log n))
 #include <bits/stdc++.h>
 using namespace std;
+#define int long long
 
-int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(NULL);
+signed main() {
+    cin.tie(0)->sync_with_stdio(0);
 
     int n;
     cin >> n;
@@ -19,5 +20,3 @@ int main() {
 
     return 0;
 }
-
-// O(nlog(log n))

@@ -1,5 +1,7 @@
+// kmp O(N+M)
 #include <bits/stdc++.h>
 using namespace std;
+#define int long long
 #define MAX 1000001
 
 vector<int> kmp(string text, string pattern) {
@@ -26,9 +28,8 @@ vector<int> kmp(string text, string pattern) {
     return result;
 }
 
-int main() {
-    ios::sync_with_stdio(0);
-    cin.tie(0);
+signed main() {
+    cin.tie(0)->sync_with_stdio(0);
     string T, P;
     getline(cin, T);
     getline(cin, P);
@@ -36,4 +37,3 @@ int main() {
         cout << i << ' ';
     return 0;
 }
-// O(N+M)

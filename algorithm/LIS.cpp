@@ -1,9 +1,10 @@
+// LIS O(NlogN)
 #include <bits/stdc++.h>
 using namespace std;
+#define int long long
 
-int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(NULL);
+signed main() {
+    cin.tie(0)->sync_with_stdio(0);
     int n, x;
     cin >> n >> x;
     vector<int> v{x};
@@ -17,4 +18,3 @@ int main() {
     cout << v.size() << '\n';
     return 0;
 }
-// O(NlogN)

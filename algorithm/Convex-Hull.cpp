@@ -1,15 +1,16 @@
+// Convex Hull O(NlogN)
 #include <bits/stdc++.h>
 using namespace std;
-#define ll long long
+#define int long long
 
 struct Point {
-    ll x, y;
+    int x, y;
 };
 
-ll n;
+int n;
 vector<Point> p, s;
 
-ll ccw(Point a, Point b, Point c) {
+int ccw(Point a, Point b, Point c) {
     return (b.x - a.x) * (c.y - a.y) - (c.x - a.x) * (b.y - a.y);
 }
 
@@ -20,13 +21,12 @@ bool cmpY(Point a, Point b) {
 }
 
 bool cmpCCW(Point a, Point b) {
-    ll cc = ccw(p[0], a, b);
+    int cc = ccw(p[0], a, b);
     return cc ? cc > 0 : cmpY(a, b);
 }
 
-int main() {
-    ios::sync_with_stdio(0);
-    cin.tie(0);
+signed main() {
+    cin.tie(0)->sync_with_stdio(0);
     cin >> n;
     p.resize(n);
     for (int i = 0; i < n; i++)
@@ -50,4 +50,3 @@ int main() {
     cout << s.size();
     return 0;
 }
-// O(NlogN)

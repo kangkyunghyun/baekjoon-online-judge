@@ -1,10 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
-#define ll long long
+#define int long long
 
-ll sorted[100000];
+int sorted[100000];
 
-void merge(ll *data, int start, int mid, int end) {
+void merge(int *data, int start, int mid, int end) {
     int i = start;
     int j = mid + 1;
     int k = start;
@@ -35,7 +35,7 @@ void merge(ll *data, int start, int mid, int end) {
     }
 }
 
-void merge_sort(ll *data, int start, int end) {
+void merge_sort(int *data, int start, int end) {
     if (start < end) {
         int mid = (start + end) / 2;
         merge_sort(data, start, mid);
@@ -44,12 +44,11 @@ void merge_sort(ll *data, int start, int end) {
     }
 }
 
-int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(NULL);
+signed main() {
+    cin.tie(0)->sync_with_stdio(0);
     int n;
     cin >> n;
-    ll arr[100000];
+    int arr[100000];
     for (int i = 0; i < n; i++)
         cin >> arr[i];
     merge_sort(arr, 0, n - 1);

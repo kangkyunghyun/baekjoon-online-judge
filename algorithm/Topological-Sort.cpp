@@ -1,9 +1,10 @@
+// Topological Sort O(V+E)
 #include <bits/stdc++.h>
 using namespace std;
+#define int long long
 
-int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(NULL);
+signed main() {
+    cin.tie(0)->sync_with_stdio(0);
     int N, M;
     vector<int> edge[32001], inDegree(32001, 0), ans;
     cin >> N >> M;

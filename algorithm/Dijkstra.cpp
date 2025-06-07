@@ -1,5 +1,7 @@
+// Dijkstra
 #include <bits/stdc++.h>
 using namespace std;
+#define int long long
 #define INF 1e9
 #define pii pair<int, int>
 
@@ -29,9 +31,8 @@ int dijkstra(int s, int e) {
     return dist[e];
 }
 
-int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(NULL);
+signed main() {
+    cin.tie(0)->sync_with_stdio(0);
     cin >> V >> E >> K;
     while (E--) {
         int u, v, w;

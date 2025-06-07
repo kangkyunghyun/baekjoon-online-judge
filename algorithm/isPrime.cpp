@@ -1,5 +1,7 @@
+// isPrime O(sqrt(n))
 #include <bits/stdc++.h>
 using namespace std;
+#define int long long
 
 bool isPrime(int n) {
     if (n < 2)
@@ -10,9 +12,8 @@ bool isPrime(int n) {
     return true;
 }
 
-int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(NULL), cout.tie(NULL);
+signed main() {
+    cin.tie(0)->sync_with_stdio(0);
 
     int n;
     cin >> n;
@@ -23,5 +24,3 @@ int main() {
 
     return 0;
 }
-
-// O(sqrt(n))

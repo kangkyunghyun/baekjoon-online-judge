@@ -1,9 +1,10 @@
+// knapsack O(NK)
 #include <bits/stdc++.h>
 using namespace std;
+#define int long long
 
-int main() {
-    ios::sync_with_stdio(0);
-    cin.tie(0);
+signed main() {
+    cin.tie(0)->sync_with_stdio(0);
     int n, k;
     cin >> n >> k;
     vector<int> knapsack(k + 1, 0);
@@ -16,4 +17,3 @@ int main() {
     cout << knapsack[k];
     return 0;
 }
-// O(NK)

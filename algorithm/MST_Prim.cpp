@@ -1,5 +1,7 @@
+// MST O(ElogV)
 #include <bits/stdc++.h>
 using namespace std;
+#define int long long
 #define pii pair<int, int>
 
 int V, E;
@@ -27,9 +29,8 @@ int prim() {
     return cost;
 }
 
-int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(NULL);
+signed main() {
+    cin.tie(0)->sync_with_stdio(0);
     cin >> V >> E;
     while (E--) {
         int a, b, c;
@@ -40,4 +41,3 @@ int main() {
     cout << prim();
     return 0;
 }
-// O(ElogV)

@@ -1,5 +1,5 @@
-
-ll pow(ll a, ll b) {
+// pow O(log N)
+int pow(int a, int b) {
     if (b == 1)
         return a;
     if (b % 2)
