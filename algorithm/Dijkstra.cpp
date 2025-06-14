@@ -1,4 +1,4 @@
-// Dijkstra
+// Dijkstra O((E+V)logV)
 #include <bits/stdc++.h>
 using namespace std;
 #define int long long
@@ -48,4 +48,3 @@ signed main() {
     }
     return 0;
 }
-// O((E+V)logV)
