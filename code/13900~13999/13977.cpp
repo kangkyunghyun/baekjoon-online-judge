@@ -4,28 +4,30 @@ using namespace std;
 #define MOD 1'000'000'007
 #define MAX 4'000'001
 
-int factorial[MAX];
+int fac[MAX], inv[MAX];
 
-pair<int, int> inv(int a, int b) {
-    if (a == 0)
-        return {0, 1};
-    if (b == 0)
-        return {1, 0};
-    pair<int, int> prev = inv(b, a % b);
-    int x = ((prev.second % MOD) + MOD) % MOD;
-    int y = prev.first - (a / b) * x;
-    return {x, y};
+int pow(int n, int k, int mod) {
+    int ret = 1, base = n % mod;
+    while (k) {
+        if (k % 2)
+            ret = (ret * base) % mod;
+        base = (base * base) % mod;
+        k /= 2;
+    }
+    return ret;
 }
 
 int nCk(int n, int k) {
-    return ((factorial[n] * inv(factorial[k], MOD).first) % MOD * inv(factorial[n - k], MOD).first) % MOD;
+    return (fac[n] * ((inv[k] * inv[n - k]) % MOD)) % MOD;
 }
 
 signed main() {
     cin.tie(0)->sync_with_stdio(0);
-    factorial[0] = 1;
+    fac[0] = 1;
     for (int i = 1; i <= MAX; i++)
-        factorial[i] = (factorial[i - 1] * i) % MOD;
+        fac[i] = (fac[i - 1] * i) % MOD;
+    for (int i = 0; i <= MAX; i++)
+        inv[i] = pow(fac[i], MOD - 2, MOD);
     int m;
     cin >> m;
     while (m--) {
