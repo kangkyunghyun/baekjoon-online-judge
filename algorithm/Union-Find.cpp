@@ -1,4 +1,4 @@
-// Union Find
+// O(1)
 #include <bits/stdc++.h>
 using namespace std;
 #define int long long
