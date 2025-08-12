@@ -1,4 +1,4 @@
-// Floyd Warshall O(N^3)
+// Floyd-Warshall O(N^3)
 #include <bits/stdc++.h>
 using namespace std;
 #define int long long

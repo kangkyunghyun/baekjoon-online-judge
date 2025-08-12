@@ -1,4 +1,4 @@
-// kmp O(N+M)
+// KMP O(N+M)
 #include <bits/stdc++.h>
 using namespace std;
 #define int long long

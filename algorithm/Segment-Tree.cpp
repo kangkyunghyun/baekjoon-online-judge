@@ -1,4 +1,4 @@
-// O(logN)
+// Segment-Tree O(logN)
 #include <bits/stdc++.h>
 using namespace std;
 #define int long long

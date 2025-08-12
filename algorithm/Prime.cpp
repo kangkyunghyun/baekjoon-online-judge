@@ -1,4 +1,4 @@
-// O(sqrt(n))
+// Prime O(sqrt(n))
 #include <bits/stdc++.h>
 using namespace std;
 #define int long long

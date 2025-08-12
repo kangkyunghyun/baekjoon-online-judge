@@ -1,5 +1,5 @@
-// O(log N)
-int pow(int n, int k, int mod) {
+// Power O(log N)
+int power(int n, int k, int mod) {
     int ret = 1, base = n % mod;
     while (k) {
         if (k % 2)

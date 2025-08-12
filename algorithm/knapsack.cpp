@@ -1,4 +1,4 @@
-// knapsack O(NK)
+// Knapsack O(NK)
 #include <bits/stdc++.h>
 using namespace std;
 #define int long long

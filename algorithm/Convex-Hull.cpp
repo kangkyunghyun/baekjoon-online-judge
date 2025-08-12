@@ -1,4 +1,4 @@
-// O(NlogN)
+// Convex-Hull O(NlogN)
 #include <bits/stdc++.h>
 using namespace std;
 #define int long long
@@ -25,12 +25,7 @@ bool cmpCCW(Point a, Point b) {
     return cc ? cc > 0 : cmpY(a, b);
 }
 
-signed main() {
-    cin.tie(0)->sync_with_stdio(0);
-    cin >> n;
-    p.resize(n);
-    for (int i = 0; i < n; i++)
-        cin >> p[i].x >> p[i].y;
+int convexHull() {
     sort(p.begin(), p.end(), cmpY);
     sort(p.begin() + 1, p.end(), cmpCCW);
     s.push_back(p[0]);
@@ -47,6 +42,15 @@ signed main() {
         }
         s.push_back(p[i]);
     }
-    cout << s.size();
+    return s.size();
+}
+
+signed main() {
+    cin.tie(0)->sync_with_stdio(0);
+    cin >> n;
+    p.resize(n);
+    for (int i = 0; i < n; i++)
+        cin >> p[i].x >> p[i].y;
+    cout << convexHull();
     return 0;
 }

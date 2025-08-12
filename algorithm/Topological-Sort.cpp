@@ -1,4 +1,4 @@
-// O(V+E)
+// Topological-Sort O(V+E)
 #include <bits/stdc++.h>
 using namespace std;
 #define int long long
