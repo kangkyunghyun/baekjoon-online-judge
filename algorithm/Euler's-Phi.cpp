@@ -1,4 +1,4 @@
-// Euler's Phi O(nlog(log n))
+// Euler's Phi O(nlogn)
 #include <bits/stdc++.h>
 using namespace std;
 #define int long long
