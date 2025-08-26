@@ -6,15 +6,14 @@ using namespace std;
 
 int V, E;
 vector<pair<int, int>> graph[501];
-vector<long long> dist(501, INF);
+vector<int> dist(501, INF);
 bool minusCycle = false;
 
 int bellman_ford(int s, int e) {
     dist[s] = 0;
     for (int i = 1; i <= V; i++)
         for (int j = 1; j <= V; j++)
-            for (auto &p : graph[j]) {
-                int next = p.first, d = p.second;
+            for (auto [next, d] : graph[j]) {
                 if (dist[j] != INF && dist[next] > dist[j] + d) {
                     dist[next] = dist[j] + d;
                     if (i == V)
