@@ -2,9 +2,12 @@
 using namespace std;
 
 int isPrime(int x) {
-  for (int i = 2; i * i <= x; i++)
+  int i = 2;
+  while (i * i <= x) {
     if (x % i == 0)
       return 0;
+    i++;
+  }
   return 1;
 }
 
