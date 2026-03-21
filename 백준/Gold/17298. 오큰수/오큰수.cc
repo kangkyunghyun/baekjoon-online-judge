@@ -2,8 +2,6 @@
 using namespace std;
 
 int main() {
-  ios::sync_with_stdio(false);
-  cin.tie(NULL);
   int n;
   cin >> n;
   vector<int> v(n), s, ans(n);
@@ -14,16 +12,13 @@ int main() {
       ans[i] = -1;
       s.push_back(v[i]);
     } else {
-      while (!s.empty() && s.back() <= v[i]) {
+      while (!s.empty() && s.back() <= v[i])
         s.pop_back();
-      }
-      if (s.empty()) {
+      if (s.empty())
         ans[i] = -1;
-        s.push_back(v[i]);
-      } else {
+      else
         ans[i] = s.back();
-        s.push_back(v[i]);
-      }
+      s.push_back(v[i]);
     }
   }
   for (int i : ans)
