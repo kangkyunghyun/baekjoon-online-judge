@@ -54,7 +54,11 @@ signed main() {
     for (auto &i : v)
         cin >> i;
     q1.push({x1 - 1, y1 - 1});
-    while (!visited[x2 - 1][y2 - 1])
+    while (!visited[x2 - 1][y2 - 1]) {
         jump(++cnt);
+        if (visited[x2 - 1][y2 - 1])
+            break;
+        jump(++cnt);
+    }
     cout << cnt;
 }
