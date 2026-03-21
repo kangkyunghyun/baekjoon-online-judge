@@ -1,50 +1,42 @@
 #include <bits/stdc++.h>
 using namespace std;
-#define p pair<int, int>
 
-int N, M, visited[1001] = {0}, ans = 0;
-vector<p> graph[1001];
+vector<int> p;
 
-struct cmp {
-  bool operator()(p a, p b) {
-    return a.second > b.second;
-  }
-};
+int find(int x) {
+  if (p[x] != x)
+    p[x] = find(p[x]);
+  return p[x];
+}
 
-void prim_mst() {
-  priority_queue<p, vector<p>, cmp> pq;
-  for (int i = 0; i < graph[1].size(); i++)
-    pq.push(graph[1][i]);
-  visited[1] = 1;
-  int cnt = 0;
-  while (cnt < N - 1) {
-    int node = pq.top().first;
-    int cost = pq.top().second;
-    pq.pop();
-    if (!visited[node]) {
-      visited[node] = 1;
-      cnt++;
-      ans += cost;
-      for (int i = 0; i < graph[node].size(); i++) {
-        int next = graph[node][i].first;
-        if (!visited[next])
-          pq.push(graph[node][i]);
-      }
-    }
-  }
+void merge(int x, int y) {
+  x = find(x);
+  y = find(y);
+  if (x < y)
+    p[y] = x;
+  else
+    p[x] = y;
 }
 
 int main() {
   ios::sync_with_stdio(false);
   cin.tie(NULL);
-  cin >> N >> M;
-  while (M--) {
-    int a, b, c;
-    cin >> a >> b >> c;
-    graph[a].push_back({b, c});
-    graph[b].push_back({a, c});
+  int V, E, ans = 0;
+  cin >> V >> E;
+  p.resize(V + 1);
+  iota(p.begin(), p.end(), 0);
+  vector<pair<int, pair<int, int>>> edge;
+  while (E--) {
+    int u, v, w;
+    cin >> u >> v >> w;
+    edge.push_back({w, {u, v}});
   }
-  prim_mst();
+  sort(edge.begin(), edge.end());
+  for (auto [weight, path] : edge)
+    if (find(path.first) != find(path.second)) {
+      ans += weight;
+      merge(path.first, path.second);
+    }
   cout << ans;
   return 0;
 }
