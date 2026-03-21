@@ -18,7 +18,7 @@
 
 <p>N×M 크기의 격자에 적절히 수를 채우려 한다. 단, 인접한 수들의 차이로 1부터 (2NM-N-M)까지의 수가 한 번씩 나오도록 채우려 한다. N=2, M=2인 경우를 예로 들면 다음과 같은 방법이 있다.</p>
 
-<p style="text-align: center;"><img alt="" height="159" src="" width="145"></p>
+<p style="text-align: center;"><img alt="" height="159" src="https://www.acmicpc.net/JudgeOnline/upload/201007/fll.png" width="145"></p>
 
 <p>위와 같이 채우면 인접한 수들의 차이로 1, 2, 3, 4가 모두 한 번씩 나오게 된다. N과 M이 주어질 때 위의 조건을 만족하며 수를 채우는 프로그램을 작성하시오.</p>
 
