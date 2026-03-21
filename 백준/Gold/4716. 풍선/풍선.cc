@@ -20,8 +20,7 @@ int main() {
     sort(v.begin(), v.end(), [](team a, team b) { return abs(a.a - a.b) > abs(b.a - b.b); });
     for (int i = 0; i < N; i++) {
       int K = v[i].K, a = v[i].a, b = v[i].b;
-      int m = a > b ? 0 : 1;
-      if (m) {
+      if (a < b) {
         if (A >= K) {
           ans += K * a;
           A -= K;
