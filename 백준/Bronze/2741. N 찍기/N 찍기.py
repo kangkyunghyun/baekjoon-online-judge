@@ -1,3 +1,4 @@
-N = int(input())
-for i in range(1, N+1):
-    print(i)
+n = int(input())
+
+for i in range(n):
+    print(i+1)
