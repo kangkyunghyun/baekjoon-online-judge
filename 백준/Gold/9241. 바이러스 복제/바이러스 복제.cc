@@ -6,18 +6,22 @@ signed main() {
     cin.tie(0)->sync_with_stdio(0);
     string a, b;
     cin >> a >> b;
-    deque<char> x, y;
-    for (char c : a)
-        x.push_back(c);
-    for (char c : b)
-        y.push_back(c);
-    while (!x.empty() && !y.empty() && x.front() == y.front()) {
-        x.pop_front();
-        y.pop_front();
-    }
-    while (!x.empty() && !y.empty() && x.back() == y.back()) {
-        x.pop_back();
-        y.pop_back();
-    }
-    cout << y.size();
+    int minSize = min(a.size(), b.size()), x = minSize, y = minSize;
+    for (int i = 0; i < minSize; i++)
+        if (a[i] != b[i]) {
+            x = i;
+            break;
+        }
+    for (int i = 0; a.size() - i - 1 >= x && b.size() - i - 1 >= x; i++)
+        if (a[a.size() - i - 1] != b[b.size() - i - 1]) {
+            y = i;
+            break;
+        }
+    int ans = 0;
+    if (x + y >= minSize) {
+        if (a.size() <= b.size())
+            ans = b.size() - a.size();
+    } else
+        ans = b.size() - x - y;
+    cout << ans;
 }
