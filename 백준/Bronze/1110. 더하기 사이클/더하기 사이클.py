@@ -1,15 +1,12 @@
-n = int(input())
-num = n
-cnt = 0
-
+a = int(input())
+first_a = a
+n = 0
 while True:
-    a = num//10
-    b = num%10
-    c = (a+b)%10
-    num = (b*10)+c
-
-    cnt = cnt + 1
-    if (num == n):
+    b = a // 10
+    c = a % 10
+    d = (b + c) % 10
+    a = c * 10 + d
+    n += 1
+    if a == first_a:
         break
-
-print(cnt)
+print(n)
