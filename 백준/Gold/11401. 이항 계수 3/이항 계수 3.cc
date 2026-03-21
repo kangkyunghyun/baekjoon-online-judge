@@ -24,9 +24,9 @@ int nCk(int n, int k) {
 signed main() {
     cin.tie(0)->sync_with_stdio(0);
     fac[0] = 1;
-    for (int i = 1; i <= MAX; i++)
+    for (int i = 1; i < MAX; i++)
         fac[i] = (fac[i - 1] * i) % MOD;
-    for (int i = 0; i <= MAX; i++)
+    for (int i = 0; i < MAX; i++)
         inv[i] = pow(fac[i], MOD - 2, MOD);
     int n, k;
     cin >> n >> k;
