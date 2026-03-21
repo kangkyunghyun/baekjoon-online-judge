@@ -10,14 +10,10 @@ int main() {
     cout << "NO\n";
     return 0;
   }
-  int arr[1001][1001];
-  for (int i = 0; i < n; i++)
-    for (int j = 0; j < m; j++)
-      arr[i][j] = i + j + 1;
   cout << "YES\n";
   for (int i = 0; i < n; i++) {
     for (int j = 0; j < m; j++)
-      cout << arr[i][j] << ' ';
+      cout << i + j + 1 << ' ';
     cout << '\n';
   }
   return 0;
