@@ -6,14 +6,14 @@ ll n, k, ans = LLONG_MAX;
 struct Node {
   ll w, v, t;
 };
-vector<int> bag, answer;
+vector<ll> bag, answer;
 int visited[200001] = {0};
 vector<Node> vec;
 
 void dfs(ll depth) {
   if (depth >= k) {
     ll S = 0, M = 0, m = LLONG_MAX;
-    for (int i : bag) {
+    for (ll i : bag) {
       S += vec[i].w;
       M = max(M, vec[i].v);
       m = min(m, vec[i].t);
@@ -39,12 +39,12 @@ int main() {
   ios::sync_with_stdio(false);
   cin.tie(NULL);
   cin >> n >> k;
-  vec.resize(n);
+  vec.resize(n + 1);
   for (ll i = 0; i < n; i++)
     cin >> vec[i].w >> vec[i].v >> vec[i].t;
   dfs(0);
   cout << ans << '\n';
-  for (int i : answer)
+  for (ll i : answer)
     cout << i + 1 << ' ';
   return 0;
 }
