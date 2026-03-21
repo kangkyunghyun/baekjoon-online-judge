@@ -1,10 +1,10 @@
 n = int(input())
 for i in range(n):
-    ox_list = list(input())
+    a = list(input())
     score = 0
     sum_score = 0
-    for ox in ox_list:
-        if ox == 'O':
+    for j in a:
+        if j == 'O':
             score += 1
             sum_score += score
         else:
