@@ -15,10 +15,6 @@ int main() {
   for (int i = 0; i < n - 1; i++) {
     double d = U[i][i];
     for (int j = i + 1; j < n; j++) {
-      if (i == j && U[i][j] == 0) {
-        cout << "-1\n";
-        return 0;
-      }
       double x = U[j][i] / d;
       for (int k = 0; k < n; k++)
         U[j][k] -= x * U[i][k];
