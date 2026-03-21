@@ -1,10 +1,12 @@
 n = int(input())
 for i in range(n):
     List = list(map(int, input().split()))
-    Avg = sum(List[1:]) / List[0]
-    A = 0
-    for i in List[1:]:
-        if i > Avg:
-            A += 1
-    result = A / List[0] * 100
+    cnt = List[0]
+    List.remove(List[0])
+    ListAvg = sum(List) / cnt
+    OverAvg = []
+    for j in List:
+        if j > ListAvg:
+            OverAvg.append(j)
+    result = len(OverAvg) / cnt * 100
     print(f'{result:.3f}%')
