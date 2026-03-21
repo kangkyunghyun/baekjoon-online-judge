@@ -36,7 +36,6 @@ int dijkstra(int s, int e) {
 
 void bfs() {
   queue<int> q;
-  vector<bool> vst(500, 0);
   q.push(D);
   while (!q.empty()) {
     int curr = q.front();
@@ -46,12 +45,9 @@ void bfs() {
       int cost = reverse_graph[curr][i].second;
       if (dist[curr] - dist[next] == cost)
         for (int j = 0; j < graph[next].size(); j++)
-          if (graph[next][j].first == curr) {
+          if (graph[next][j].first == curr && graph[next][j].second != INF) {
             graph[next][j].second = INF;
-            if (!vst[next]) {
-              vst[next] = 1;
-              q.push(next);
-            }
+            q.push(next);
             break;
           }
     }
