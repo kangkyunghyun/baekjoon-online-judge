@@ -9,7 +9,8 @@ int main() {
   while (t--) {
     int n, m;
     cin >> n >> m;
-    int ans = 1, r = 1;
+    long long ans = 1;
+    int r = 1;
     for (int i = m; i > m - n; i--) {
       ans *= i;
       ans /= r++;
