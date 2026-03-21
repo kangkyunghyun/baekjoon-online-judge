@@ -2,17 +2,19 @@
 using namespace std;
 
 int main() {
-  int n;
+  ios::sync_with_stdio(false);
+  cin.tie(NULL), cout.tie(NULL);
+  int n, ans = 1;
   cin >> n;
   vector<int> v(n);
   for (int i = 0; i < n; i++)
     cin >> v[i];
-  int max = v[n - 1], cnt = 1;
+  int max = v[n - 1];
   for (int i = n - 2; i >= 0; i--)
-    if (max < v[i]) {
+    if (v[i] > max) {
+      ans++;
       max = v[i];
-      cnt++;
     }
-  cout << cnt;
+  cout << ans;
   return 0;
 }
