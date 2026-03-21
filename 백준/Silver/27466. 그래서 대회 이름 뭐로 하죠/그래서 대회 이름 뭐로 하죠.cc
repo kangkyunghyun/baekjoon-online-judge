@@ -49,9 +49,8 @@ int main() {
     }
     return 0;
   }
-  int f = 0;
-  for (int i = 0; i < a.size() - 1; i++) {
-    if (n - a[i] - 1 < m - 3) {
+  for (int i = 0; i < a.size(); i++) {
+    if (a.size() == 2 && n - a[i] > m) {
       cout << "NO\n";
       return 0;
     }
