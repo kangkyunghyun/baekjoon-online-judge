@@ -10,7 +10,7 @@ int main() {
   while (n--) {
     int x;
     cin >> x;
-    if (x > 3) {
+    while (x > 3) {
       x %= 3;
     }
     if (x == 1) {
