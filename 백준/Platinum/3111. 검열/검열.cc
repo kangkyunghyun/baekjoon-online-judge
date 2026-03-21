@@ -46,11 +46,14 @@ int main() {
       }
     }
   }
-  T = "";
+  string tmp = "";
   for (int i = 0; i < front.size(); i++)
-    T += front[i];
+    tmp += front[i];
+  for (int i = left; i <= right; i++)
+    tmp += T[i];
   for (int i = 0; i < back.size(); i++)
-    T += back[i];
+    tmp += back[i];
+  T = tmp;
   while (T.find(A) != string::npos)
     T.erase(T.find(A), A.size());
   cout << T << '\n';
