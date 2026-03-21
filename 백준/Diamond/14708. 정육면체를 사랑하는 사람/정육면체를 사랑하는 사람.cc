@@ -12,17 +12,18 @@ signed main() {
         for (int b = a; b <= sqrt(k / a) + 1; b++) {
             int c = ceil((double)k / (a * b));
             int tmp = 2 * (a * b + a * c + b * c);
-            if (surface > tmp && a * b * c >= k) {
-                vector<int> t{a, b, c};
-                sort(t.begin(), t.end());
-                surface = tmp;
-                ans.clear();
-                ans.push_back(t);
-            } else if (surface == tmp && a * b * c >= k) {
-                vector<int> t{a, b, c};
-                sort(t.begin(), t.end());
-                ans.push_back(t);
-            }
+            if (a * b * c >= k)
+                if (surface > tmp) {
+                    vector<int> t{a, b, c};
+                    sort(t.begin(), t.end());
+                    surface = tmp;
+                    ans.clear();
+                    ans.push_back(t);
+                } else if (surface == tmp) {
+                    vector<int> t{a, b, c};
+                    sort(t.begin(), t.end());
+                    ans.push_back(t);
+                }
         }
     }
     sort(ans.begin(), ans.end());
