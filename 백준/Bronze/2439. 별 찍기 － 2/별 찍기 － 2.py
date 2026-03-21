@@ -1,4 +1,3 @@
-n = int(input())
-
-for i in range(1, n+1):
-    print(" "*(n-i) + "*"*i)
+T = int(input())
+for i in range(1, T+1):
+    print(" " * (T - i) + "*" * (i))
