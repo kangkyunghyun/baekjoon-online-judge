@@ -6,39 +6,40 @@ int main() {
   cin.tie(NULL);
   string s;
   cin >> s;
-  for (int i = 0; i < s.size(); i++) {
-    if (s[i] == 'K') {
-      if (s.find('O', i) != string::npos) {
-        int idx = s.find('O', i);
-        if (s.find('R', idx) != string::npos) {
-          idx = s.find('R', idx);
-          if (s.find('E', idx) != string::npos) {
-            idx = s.find('E', idx);
-            if (s.find('A', idx) != string::npos) {
-              cout << "KOREA";
-              return 0;
-            }
-          }
-        }
-      }
+  int k = 0, y = 0;
+  for (char c : s) {
+    if (c == 'K' && k == 0)
+      k++;
+    if (c == 'O') {
+      if (k == 1)
+        k++;
+      if (y == 1)
+        y++;
     }
-    if (s[i] == 'Y') {
-      if (s.find('O', i) != string::npos) {
-        int idx = s.find('O', i);
-        if (s.find('N', idx) != string::npos) {
-          idx = s.find('N', idx);
-          if (s.find('S', idx) != string::npos) {
-            idx = s.find('S', idx);
-            if (s.find('E', idx) != string::npos) {
-              idx = s.find('E', idx);
-              if (s.find('I', idx) != string::npos) {
-                cout << "YONSEI";
-                return 0;
-              }
-            }
-          }
-        }
-      }
+    if (c == 'R' && k == 2)
+      k++;
+    if (c == 'E') {
+      if (k == 3)
+        k++;
+      if (y == 4)
+        y++;
+    }
+    if (c == 'A' && k == 4)
+      k++;
+    if (c == 'Y' && y == 0)
+      y++;
+    if (c == 'N' && y == 2)
+      y++;
+    if (c == 'S' && y == 3)
+      y++;
+    if (c == 'I' && y == 5)
+      y++;
+    if (k == 5) {
+      cout << "KOREA";
+      return 0;
+    } else if (y == 6) {
+      cout << "YONSEI";
+      return 0;
     }
   }
   return 0;
