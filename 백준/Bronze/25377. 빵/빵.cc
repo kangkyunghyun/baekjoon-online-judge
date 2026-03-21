@@ -8,7 +8,7 @@ int main() {
   cin >> n;
   while (n--) {
     cin >> a >> b;
-    if (a <= b)
+    if (a < b)
       m = min(m, b);
   }
   cout << (m > 1000 ? -1 : m);
