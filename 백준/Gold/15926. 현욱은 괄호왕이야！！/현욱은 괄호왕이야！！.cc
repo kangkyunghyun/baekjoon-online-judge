@@ -8,10 +8,9 @@ int main() {
   string str;
   stack<pair<char, int>> s;
   cin >> n >> str;
+  s.push({' ', -1});
   for (int i = 0; i < n; i++)
-    if (s.empty())
-      s.push({str[i], i});
-    else if (str[i] == ')' && s.top().first == '(')
+    if (str[i] == ')' && s.top().first == '(')
       s.pop();
     else
       s.push({str[i], i});
@@ -22,7 +21,6 @@ int main() {
     ans = max(ans, a - b - 1);
     a = b;
   }
-  ans = max(ans, a);
   cout << ans;
   return 0;
 }
