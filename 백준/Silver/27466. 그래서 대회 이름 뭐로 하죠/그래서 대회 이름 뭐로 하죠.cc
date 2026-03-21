@@ -15,7 +15,6 @@ void dfs(int cnt) {
       cout << '\n';
       flag = 1;
     }
-    ans.clear();
     return;
   }
   for (int i = 0; i < n; i++) {
@@ -39,6 +38,8 @@ int main() {
     cout << "NO";
     return 0;
   }
+
   dfs(0);
+
   return 0;
 }
