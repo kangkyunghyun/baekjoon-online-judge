@@ -25,10 +25,14 @@ int main() {
     } else if (x > 0 && y < 0) {
       a = 4;
       t = (double)y / x;
-    } else if (x == 0)
-      a = 5; // y축
-    else if (y == 0)
-      a = 6; // x축
+    } else if (x == 0 && y > 0)
+      a = 5; // y축 위
+    else if (x == 0 && y < 0)
+      a = 6; // y축 아래
+    else if (y == 0 && x > 0)
+      a = 7; // x축 오른쪽
+    else if (y == 0 && x > 0)
+      a = 8; // x축 왼쪽
     s.insert({t, a});
   }
   cout << s.size();
