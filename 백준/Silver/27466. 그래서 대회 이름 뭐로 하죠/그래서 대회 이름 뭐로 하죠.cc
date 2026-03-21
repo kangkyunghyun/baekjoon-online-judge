@@ -41,7 +41,7 @@ int main() {
     return 0;
   }
   if (n == m) {
-    if (s[m - 2] == 'A' && s[m - 3] == 'A' && (s[m - 1] != 'A' && s[m - 1] != 'E' && s[m - 1] != 'I' && s[m - 1] != 'O' && s[m - 1] != 'U')) {
+    if (ans[m - 2] == 'A' && ans[m - 3] == 'A' && (ans[m - 1] != 'A' && ans[m - 1] != 'E' && ans[m - 1] != 'I' && ans[m - 1] != 'O' && ans[m - 1] != 'U')) {
       cout << "YES\n";
       cout << s << '\n';
     } else {
@@ -49,6 +49,7 @@ int main() {
     }
     return 0;
   }
+  int f = 0;
   for (int i = 0; i < a.size(); i++) {
     if (a.size() == 2 && n - a[i] > m) {
       cout << "NO\n";
