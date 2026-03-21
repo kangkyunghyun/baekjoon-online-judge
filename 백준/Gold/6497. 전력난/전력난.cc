@@ -1,0 +1,47 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+vector<int> p;
+
+int find(int x) {
+  if (p[x] != x)
+    p[x] = find(p[x]);
+  return p[x];
+}
+
+void merge(int x, int y) {
+  x = find(x);
+  y = find(y);
+  if (x < y)
+    p[y] = x;
+  else
+    p[x] = y;
+}
+
+int main() {
+  ios::sync_with_stdio(false);
+  cin.tie(NULL);
+  while (1) {
+    int V, E, ans = 0, sum = 0;
+    vector<pair<int, pair<int, int>>> edge;
+    cin >> V >> E;
+    if (!(V + E))
+      break;
+    p.resize(V + 1);
+    iota(p.begin(), p.end(), 0);
+    while (E--) {
+      int u, v, w;
+      cin >> u >> v >> w;
+      edge.push_back({w, {u, v}});
+      sum += w;
+    }
+    sort(edge.begin(), edge.end());
+    for (auto [weight, path] : edge)
+      if (find(path.first) != find(path.second)) {
+        ans += weight;
+        merge(path.first, path.second);
+      }
+    cout << sum - ans << '\n';
+  }
+  return 0;
+}
