@@ -2,16 +2,16 @@
 using namespace std;
 
 int main() {
-  int n, c, b;
+  int n, x, b;
   int a[10000] = {0};
-  cin >> n >> c;
+  cin >> n >> x;
   for (int i = 0; i < n; i++) {
     cin >> b;
     a[i] = b;
   }
   for (int j = 0; j < n; j++) {
-    if (a[j] < c) {
-      cout << a[j] << '\n';
+    if (a[j] < x) {
+      cout << a[j] << ' ';
     }
   }
 }
