@@ -5,10 +5,10 @@ int main() {
   ios::sync_with_stdio(false);
   cin.tie(NULL);
   int n;
-  double p = 0, q = 0;
+  long double p = 0, q = 0;
   cin >> n;
   while (n--) {
-    int x;
+    long long x;
     cin >> x;
     while (x > 3) {
       x -= 3;
@@ -22,7 +22,7 @@ int main() {
       q++;
     }
   }
-  cout.precision(10);
+  cout.precision(9);
   cout << fixed << p << ' ' << q << '\n';
   return 0;
 }
