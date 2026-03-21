@@ -1,2 +1,2 @@
 a = int(input())
-print(a-543)
+print(a - 543)
