@@ -36,16 +36,7 @@ int main() {
     if (s[i] == 'A')
       a++;
   if (a < 2) {
-    cout << "NO\n";
-    return 0;
-  }
-  if (n == m) {
-    if (ans[m - 2] == 'A' && ans[m - 3] == 'A' && (ans[m - 1] != 'A' && ans[m - 1] != 'E' && ans[m - 1] != 'I' && ans[m - 1] != 'O' && ans[m - 1] != 'U')) {
-      cout << "YES\n";
-      cout << s << '\n';
-    } else {
-      cout << "NO\n";
-    }
+    cout << "NO";
     return 0;
   }
   dfs(0);
