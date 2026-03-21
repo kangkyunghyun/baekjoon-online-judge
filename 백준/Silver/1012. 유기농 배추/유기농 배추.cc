@@ -16,7 +16,6 @@ void bfs(int xx, int yy) {
     int y = q.front().second;
     q.pop();
     visited[x][y] = true;
-
     for (int i = 0; i < 4; i++) {
       int nx = x + dx[i];
       int ny = y + dy[i];
@@ -29,12 +28,11 @@ void bfs(int xx, int yy) {
 }
 
 void init() {
-  for (int i = 0; i < m; i++) {
+  for (int i = 0; i < m; i++)
     for (int j = 0; j < n; j++) {
       v[i][j] = 0;
       visited[i][j] = false;
     }
-  }
 }
 
 int main() {
@@ -51,7 +49,6 @@ int main() {
       cin >> x >> y;
       v[x][y] = 1;
     }
-
     for (int i = 0; i < m; i++) {
       for (int j = 0; j < n; j++) {
         if (v[i][j] == 1 && !visited[i][j]) {
