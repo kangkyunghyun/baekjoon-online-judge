@@ -16,11 +16,17 @@ int main() {
     double d = U[i][i];
     for (int j = i + 1; j < n; j++) {
       double x = U[j][i] / d;
-      for (int k = 0; k < n; k++)
+      for (int k = 0; k < n; k++) {
         U[j][k] -= x * U[i][k];
+      }
       L[j][i] = x;
     }
   }
+  for (int i = 0, j = 0; i < n; i++, j++)
+    if (L[i][j] != 1) {
+      cout << "-1\n";
+      return 0;
+    }
   for (int i = 0; i < n; i++)
     for (int j = 0; j < n; j++)
       if (isnan(L[i][j]) || isnan(U[i][j])) {
