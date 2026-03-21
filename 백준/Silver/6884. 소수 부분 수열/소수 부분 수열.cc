@@ -1,14 +1,14 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-bool isPrime(int x) {
+int isPrime(int x) {
   int i = 2;
   while (i * i <= x) {
     if (x % i == 0)
-      return false;
+      return 0;
     i++;
   }
-  return true;
+  return 1;
 }
 
 int main() {
