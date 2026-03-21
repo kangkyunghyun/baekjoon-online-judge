@@ -1,12 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int n, m, flag = 0;
+int n, m, a = 0, flag = 0;
 string s;
 vector<int> visited(300001, 0);
 vector<char> ans(300001);
 
-void dfs(int cnt, int before) {
+void dfs(int cnt) {
   if (cnt == m) {
     if (ans[m - 2] == 'A' && ans[m - 3] == 'A' && (ans[m - 1] != 'A' && ans[m - 1] != 'E' && ans[m - 1] != 'I' && ans[m - 1] != 'O' && ans[m - 1] != 'U')) {
       cout << "YES\n";
@@ -19,10 +19,10 @@ void dfs(int cnt, int before) {
     return;
   }
   for (int i = 0; i < n; i++) {
-    if (i > before && !visited[i] && !flag) {
+    if (!visited[i] && !flag) {
       visited[i] = 1;
       ans[cnt] = s[i];
-      dfs(cnt + 1, i);
+      dfs(cnt + 1);
       visited[i] = 0;
     }
   }
@@ -32,11 +32,10 @@ int main() {
   ios::sync_with_stdio(false);
   cin.tie(NULL);
   cin >> n >> m >> s;
-  vector<int> a;
   for (int i = 0; i < n; i++)
     if (s[i] == 'A')
-      a.push_back(i);
-  if (a.size() < 2) {
+      a++;
+  if (a < 2) {
     cout << "NO\n";
     return 0;
   }
@@ -49,13 +48,6 @@ int main() {
     }
     return 0;
   }
-  int f = 0;
-  for (int i = 0; i < a.size(); i++) {
-    if (a.size() == 2 && n - a[i] > m) {
-      cout << "NO\n";
-      return 0;
-    }
-  }
-  dfs(0, -1);
+  dfs(0);
   return 0;
 }
