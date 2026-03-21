@@ -11,7 +11,7 @@ int main() {
     int x;
     cin >> x;
     while (x > 3) {
-      x %= 3;
+      x -= 3;
     }
     if (x == 1) {
       p++;
