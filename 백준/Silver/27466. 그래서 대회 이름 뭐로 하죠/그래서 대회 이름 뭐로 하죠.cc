@@ -51,7 +51,7 @@ int main() {
   }
   int f = 0;
   for (int i = 0; i < a.size() - 1; i++) {
-    if (n - a[i] - 1 <= m - 3) {
+    if (n - a[i] - 1 < m - 3) {
       cout << "NO\n";
       return 0;
     }
