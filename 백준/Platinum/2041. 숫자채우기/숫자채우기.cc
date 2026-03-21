@@ -1,0 +1,2 @@
+#include<iostream>
+using namespace std;int main(){int n,m;cin>>n>>m;int a=1,b=2*n*m-n-m+1,i=0,j;for(;i<n;i++){for(j=0;j<m;j++)if((i+j)%2==0){cout<<a++<<' ';}else{cout<<b--<<' ';}a+=m/2;b-=m/2;if(m%2==0){if(i%2==0)b++;else a--;}cout<<'\n';}}
