@@ -41,7 +41,11 @@ signed main() {
             }
         }
     }
-    cout << "YES\n";
-    for (auto i : ans)
-        cout << i;
+    if (u + d == 0) {
+        cout << "YES\n";
+        for (auto i : ans)
+            cout << i;
+    } else {
+        cout << "NO";
+    }
 }
