@@ -1,7 +1,7 @@
-a = int(input())
-b = int(input())
-c = int(input())
-
-result = list(str(a*b*c))
-for i in range(10):
-    print(result.count(str(i)))
+A = int(input())
+B = int(input())
+C = int(input())
+ABC = str(A*B*C)
+print(ABC.count('0'))
+for i in range(1, 10):
+    print(ABC.count(str(i)))
