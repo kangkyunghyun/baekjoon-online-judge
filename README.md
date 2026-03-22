@@ -1,5 +1,2 @@
-# 백준 온라인 저지 솔루션
-
-- code 폴더 내 문제 번호 기준 100 단위로 폴더를 구분합니다. (ex. `1000~1099`)
-- `문제번호.확장자` 형태로 자료를 올립니다. (ex. `1000.cpp`)
-- AC를 받은 코드만 `commit` 합니다.
+# problem-solving
+This is an auto push repository for Baekjoon Online Judge created with [BaekjoonHub](https://github.com/BaekjoonHub/BaekjoonHub).
