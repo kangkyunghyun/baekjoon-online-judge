@@ -1,10 +1,22 @@
-<h3><a href="https://codeforces.com/contest/1878/problem/A" target="_blank" rel="noopener noreferrer">How Much Does Daytona Cost?</a></h3>
-
-<div class="header"><div class="title">A. How Much Does Daytona Cost?</div><div class="time-limit"><div class="property-title">time limit per test</div>1 second</div><div class="memory-limit"><div class="property-title">memory limit per test</div>256 megabytes</div><div class="input-file input-standard"><div class="property-title">input</div>standard input</div><div class="output-file output-standard"><div class="property-title">output</div>standard output</div></div><div><p>We define an integer to be <span class="tex-font-style-it">the most common</span> on a subsegment, if its number of occurrences on that subsegment is larger than the number of occurrences of any other integer in that subsegment. A subsegment of an array is a consecutive segment of elements in the array $$$a$$$.</p><p>Given an array $$$a$$$ of size $$$n$$$, and an integer $$$k$$$, determine if there exists a non-empty subsegment of $$$a$$$ where $$$k$$$ is <span class="tex-font-style-it">the most common element</span>.</p></div><div class="input-specification"><div class="section-title">Input</div><p>Each test consists of multiple test cases. The first line contains a single integer $$$t$$$ ($$$1 \le t \le 1000$$$) — the number of test cases. The description of test cases follows.</p><p>The first line of each test case contains two integers $$$n$$$ and $$$k$$$ ($$$1 \le n \le 100$$$, $$$1 \le k \le 100$$$) — the number of elements in array and the element which must be <span class="tex-font-style-it">the most common</span>.</p><p>The second line of each test case contains $$$n$$$ integers $$$a_1$$$, $$$a_2$$$, $$$a_3$$$, $$$\dots$$$, $$$a_n$$$ ($$$1 \le a_i \le 100$$$) — elements of the array.</p></div><div class="output-specification"><div class="section-title">Output</div><p>For each test case output "<span class="tex-font-style-tt">YES</span>" if there exists a subsegment in which $$$k$$$ is <span class="tex-font-style-it">the most common</span> element, and "<span class="tex-font-style-tt">NO</span>" otherwise.</p><p>You can output the answer in any case (for example, the strings "<span class="tex-font-style-tt">yEs</span>", "<span class="tex-font-style-tt">yes</span>", "<span class="tex-font-style-tt">Yes</span>", and "<span class="tex-font-style-tt">YES</span>" will be recognized as a positive answer).</p></div><div class="sample-tests"><div class="section-title">Example</div><div class="sample-test"><div class="input"><div class="title">Input<div title="Copy" data-clipboard-target="#id007067135881809603" id="id0021876926657869522" class="input-output-copier">Copy</div></div><pre id="id007067135881809603"><div class="test-example-line test-example-line-even test-example-line-0">7</div><div class="test-example-line test-example-line-odd test-example-line-1">5 4</div><div class="test-example-line test-example-line-odd test-example-line-1">1 4 3 4 1</div><div class="test-example-line test-example-line-even test-example-line-2">4 1</div><div class="test-example-line test-example-line-even test-example-line-2">2 3 4 4</div><div class="test-example-line test-example-line-odd test-example-line-3">5 6</div><div class="test-example-line test-example-line-odd test-example-line-3">43 5 60 4 2</div><div class="test-example-line test-example-line-even test-example-line-4">2 5</div><div class="test-example-line test-example-line-even test-example-line-4">1 5</div><div class="test-example-line test-example-line-odd test-example-line-5">4 1</div><div class="test-example-line test-example-line-odd test-example-line-5">5 3 3 1</div><div class="test-example-line test-example-line-even test-example-line-6">1 3</div><div class="test-example-line test-example-line-even test-example-line-6">3</div><div class="test-example-line test-example-line-odd test-example-line-7">5 3</div><div class="test-example-line test-example-line-odd test-example-line-7">3 4 1 5 5</div></pre></div><div class="output"><div class="title">Output<div title="Copy" data-clipboard-target="#id005852196334069499" id="id007568811681468837" class="input-output-copier">Copy</div></div><pre id="id005852196334069499">YES
-NO
-NO
-YES
-YES
-YES
-YES
-</pre></div></div></div><div class="note"><div class="section-title">Note</div><p>In the first test case we need to check if there is a subsegment where the <span class="tex-font-style-it">most common element</span> is $$$4$$$.</p><p>On the subsegment $$$[2,5]$$$ the elements are $$$4, \ 3, \ 4, \ 1$$$. </p><ul><li> $$$4$$$ appears $$$2$$$ times;</li><li> $$$1$$$ appears $$$1$$$ time;</li><li> $$$3$$$ appears $$$1$$$ time.</li></ul><p>This means that $$$4$$$ is the <span class="tex-font-style-it">most common element</span> on the subsegment $$$[2, 5]$$$, so there exists a subsegment where $$$4$$$ is the <span class="tex-font-style-it">most common element</span>.</p></div>
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main() {
+  cin.tie(0)->sync_with_stdio(0);
+  int t;
+  cin >> t;
+  while (t--) {
+    int n, k;
+    cin >> n >> k;
+    int x;
+    string ans = "NO";
+    for (int i = 0; i < n; i++) {
+      cin >> x;
+      if (x == k)
+        ans = "YES";
+    }
+    cout << ans << '
+';
+  }
+  return 0;
+}
